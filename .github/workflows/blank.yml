@@ -18,8 +18,8 @@ jobs:
           echo test, and deploy your project.
           VERSAO=$(echo $GITHUB_SHA | cut -c1-7)
           echo criação da imagem "felicianocr.azurecr.io/appbraga:$VERSAO"
-          docker build -t "$ACR/appbraga:$VERSAO" .
+          docker build -t "felicianocr.azurecr.io/appbraga:$VERSAO" .
           echo fazer o login no azure
-          $DOCKERLOGIN
+          ${{ secrets.DOCKERLOGIN }}
           echo Envio da imagem para azure
-          docker push "$ACR/appbraga:$VERSAO"
+          docker push "felicianocr.azurecr.io/appbraga:$VERSAO"
