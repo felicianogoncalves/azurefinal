@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM ubuntu:latest
 RUN echo "Bom ano a todos"
 RUN apt update -y
 RUN apt upgrade -y
