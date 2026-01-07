@@ -18,7 +18,7 @@ jobs:
           echo test, and deploy your project.
           VERSAO=$VERSAO+1
           echo criação da imagem
-          docker build -t $ACR/appbraga:$VERSAO .
+          docker build -t "$ACR/appbraga:$VERSAO" .
           echo fazer o login no azure
           $DOCKERLOGIN
           echo Envio da imagem para azure
