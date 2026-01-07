@@ -22,4 +22,4 @@ jobs:
           echo fazer o login no azure
           $DOCKERLOGIN
           echo Envio da imagem para azure
-          docker push $ACR/appbraga:$VERSAO
+          docker push "$ACR/appbraga:$VERSAO"
