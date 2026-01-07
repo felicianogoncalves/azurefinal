@@ -17,7 +17,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           VERSAO=$(( VERSAO+1 ))
-          echo criação da imagem
+          echo criação da imagem "$ACR/appbraga:$VERSAO"
           docker build -t "$ACR/appbraga:$VERSAO" .
           echo fazer o login no azure
           $DOCKERLOGIN
