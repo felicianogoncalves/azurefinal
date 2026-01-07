@@ -1,0 +1,25 @@
+name: Build and Push Docker Image to ACR
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build da imagem
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          VERSAO=$VERSAO+1
+          echo criação da imagem
+          docker build -t $ACR/appbraga:$VERSAO .
+          echo fazer o login no azure
+          $DOCKERLOGIN
+          echo Envio da imagem para azure
+          docker push $ACR/appbraga:$VERSAO
