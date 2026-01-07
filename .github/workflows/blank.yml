@@ -16,7 +16,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          VERSAO=$(( VERSAO+1 ))
+          VERSAO=$(echo $GITHUB_SHA | cut -c1-7)
           echo criação da imagem "$ACR/appbraga:$VERSAO"
           docker build -t "$ACR/appbraga:$VERSAO" .
           echo fazer o login no azure
